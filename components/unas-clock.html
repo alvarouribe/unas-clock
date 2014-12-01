@@ -1,0 +1,262 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+
+<polymer-element name="unas-clock" attributes="notation timezone">
+  <template>
+    
+    <style>
+      #clock, #hour, #minutes, #seconds {
+        display: inline-block;
+        color: black;
+        font-family: monospace;
+        font-size: 40px;
+      }
+    </style>
+    
+    <div id="clock">
+      <span id="hour">00</span><span id="minutes">00</span><span id="seconds">00</span><span id="period"></span>
+    </div>
+  </template>
+  <script>
+    Polymer('unas-clock', {
+      
+      ready: function() {
+        var self = this;
+        var today=new Date(), 
+            h=today.getHours(), 
+            m=today.getMinutes(), 
+            s=today.getSeconds(), 
+            hour=this.shadowRoot.getElementById('hour'),
+            minutes=this.shadowRoot.getElementById('minutes'),
+            seconds=this.shadowRoot.getElementById('seconds'),
+            period=this.shadowRoot.getElementById('period');
+
+        
+
+        if(this.timezone != undefined){
+          switch(this.timezone){
+            case 'Pacific/Midway' :
+            case 'Pacific/Samoa' :
+              h = today.getHours(today.setHours(today.getHours() - 11));
+            break;
+            case 'Pacific/Honolulu' :
+              h = today.getHours(today.setHours(today.getHours() - 10));
+            break;
+            case 'US/Alaska' :
+              h = today.getHours(today.setHours(today.getHours() - 9));
+            break;
+            case 'America/Los_Angeles' :
+            case 'America/Tijuana' :
+              h = today.getHours(today.setHours(today.getHours() - 8));
+            break;
+            case 'US/Arizona' :
+            case 'America/Chihuahua' :
+            case 'America/Chihuahua' :
+            case 'America/Mazatlan' :
+            case 'US/Mountain' :  
+              h = today.getHours(today.setHours(today.getHours() - 7));
+            break;
+            case 'America/Managua' :
+            case 'US/Central' :
+            case 'America/Mexico_City' :
+            case 'America/Monterrey' :
+            case 'Canada/Saskatchewan' :
+              h = today.getHours(today.setHours(today.getHours() - 6));
+            break;
+            case 'America/Bogota' :
+            case 'US/Eastern' :
+            case 'US/East-Indiana' :
+            case 'America/Lima' :
+            case 'America/Bogota' :
+              h = today.getHours(today.setHours(today.getHours() - 5));
+            break;
+            case 'America/Caracas' :
+              h = today.getHours(today.setHours(today.getHours() - 4));
+              m = today.getMinutes(today.setMinutes(today.getMinutes() - 30));
+            break;
+            case 'America/La_Paz' :
+            case 'Canada/Atlantic' :
+            case 'America/Santiago' :
+              h = today.getHours(today.setHours(today.getHours() - 4));
+            break;
+            case 'Canada/Newfoundland' :
+              h = today.getHours(today.setHours(today.getHours() - 3));
+              m = today.getMinutes(today.setMinutes(today.getMinutes() - 30));
+            break;
+            case 'America/Sao_Paulo' :
+            case 'America/Argentina/Buenos_Aires' :
+            case 'America/Godthab' :
+              h = today.getHours(today.setHours(today.getHours() - 3));
+            break;
+            case 'America/Noronha' :
+              h = today.getHours(today.setHours(today.getHours() - 2));
+            break;
+            case 'Atlantic/Azores' :
+            case 'Atlantic/Cape_Verde' :
+              h = today.getHours(today.setHours(today.getHours() - 1));
+            break;
+            case 'Africa/Casablanca' :
+            case 'Europe/London' :
+            case 'Etc/Greenwich' :
+            case 'Europe/Lisbon' :
+            case 'Europe/London' :
+            case 'Africa/Monrovia' :
+            case 'UTC' :
+              h = today.getHours(today.setHours(today.getHours() + 0));
+            break;
+            case 'Europe/Amsterdam' :
+            case 'Europe/Belgrade' :
+            case 'Europe/Berlin' :
+            case 'Europe/Bratislava' :
+            case 'Europe/Brussels' :
+            case 'Europe/Budapest' :
+            case 'Europe/Copenhagen' :
+            case 'Europe/Ljubljana' :
+            case 'Europe/Madrid' :
+            case 'Europe/Paris' :
+            case 'Europe/Prague' :
+            case 'Europe/Rome' :
+            case 'Europe/Sarajevo' :
+            case 'Europe/Skopje' :
+            case 'Europe/Stockholm' :
+            case 'Europe/Vienna' :
+            case 'Europe/Warsaw' :
+            case 'Africa/Lagos' :
+            case 'Europe/Zagreb' :
+              h = today.getHours(today.setHours(today.getHours() + 1));
+            break;
+            case 'Europe/Athens' :
+            case 'Europe/Bucharest' :
+            case 'Africa/Cairo' :
+            case 'Africa/Harare' :
+            case 'Europe/Helsinki' :
+            case 'Europe/Istanbul' :
+            case 'Asia/Jerusalem' :
+            case 'Africa/Johannesburg' :
+            case 'Europe/Riga' :
+            case 'Europe/Sofia' :
+            case 'Europe/Tallinn' :
+            case 'Europe/Vilnius' :
+              h = today.getHours(today.setHours(today.getHours() + 2));
+            break;
+            case 'Asia/Baghdad' :
+            case 'Asia/Kuwait' :
+            case 'Europe/Minsk' :
+            case 'Africa/Nairobi' :
+            case 'Asia/Riyadh' :
+            case 'Europe/Volgograd' :
+              h = today.getHours(today.setHours(today.getHours() + 3));
+            break;
+            case 'Asia/Tehran' :
+              h = today.getHours(today.setHours(today.getHours() + 3));
+              m = today.getMinutes(today.setMinutes(today.getMinutes() + 30));
+            break;
+            case 'Asia/Muscat' :
+            case 'Asia/Baku' :
+            case 'Europe/Moscow' :
+            case 'Asia/Tbilisi' :
+            case 'Asia/Yerevan' :
+              h = today.getHours(today.setHours(today.getHours() + 4));
+            break;
+            case 'Asia/Kabul' :
+              h = today.getHours(today.setHours(today.getHours() + 4));
+              m = today.getMinutes(today.setMinutes(today.getMinutes() + 30));
+            break;
+            case 'Asia/Karachi' :
+            case 'Asia/Tashkent' :
+              h = today.getHours(today.setHours(today.getHours() + 5));
+            break;
+            case 'Asia/Calcutta' :
+            case 'Asia/Kolkata' :
+              h = today.getHours(today.setHours(today.getHours() + 5));
+              m = today.getMinutes(today.setMinutes(today.getMinutes() + 30));
+            break;
+            case 'Asia/Katmandu' :
+              h = today.getHours(today.setHours(today.getHours() + 5));
+              m = today.getMinutes(today.setMinutes(today.getMinutes() + 45));
+            break;
+            case 'Asia/Almaty' :
+            case 'Asia/Dhaka' :
+            case 'Asia/Yekaterinburg' :
+              h = today.getHours(today.setHours(today.getHours() + 6));
+            break;
+            case 'Asia/Rangoon' :
+              h = today.getHours(today.setHours(today.getHours() + 6));
+              m = today.getMinutes(today.setMinutes(today.getMinutes() + 30));
+            break;
+            case 'Asia/Bangkok' :
+            case 'Asia/Jakarta' :
+            case 'Asia/Novosibirsk' :
+              h = today.getHours(today.setHours(today.getHours() + 7));
+            break;
+            case 'Asia/Hong_Kong' :
+            case 'Asia/Chongqing' :
+            case 'Asia/Krasnoyarsk' :
+            case 'Asia/Kuala_Lumpur' :
+            case 'Australia/Perth' :
+            case 'Asia/Singapore' :
+            case 'Asia/Taipei' :
+            case 'Asia/Ulan_Bator' :
+            case 'Asia/Urumqi' :
+            case 'Asia/Irkutsk' :
+              h = today.getHours(today.setHours(today.getHours() + 8));
+            break;            
+            case 'Asia/Seoul' :
+            case 'Asia/Tokyo' :
+              h = today.getHours(today.setHours(today.getHours() + 9));
+            break;
+            case 'Australia/Adelaide' :
+            case 'Australia/Darwin' :
+              h = today.getHours(today.setHours(today.getHours() + 9));
+              m = today.getMinutes(today.setMinutes(today.getMinutes() + 30));
+            break;
+            case 'Australia/Brisbane' :
+            case 'Australia/Canberra' :
+            case 'Pacific/Guam' :
+            case 'Australia/Hobart' :
+            case 'Australia/Melbourne' :
+            case 'Pacific/Port_Moresby' :
+            case 'Australia/Sydney' :
+            case 'Asia/Yakutsk' :
+              h = today.getHours(today.setHours(today.getHours() + 10));
+            break;
+            case 'Asia/Vladivostok' :
+              h = today.getHours(today.setHours(today.getHours() + 11));
+            break;
+            case 'Pacific/Auckland' :
+            case 'Pacific/Fiji' :
+            case 'Pacific/Kwajalein' :
+            case 'Asia/Kamchatka' :
+            case 'Asia/Magadan' :
+              h = today.getHours(today.setHours(today.getHours() + 12));
+            break;
+            case 'Pacific/Tongatapu' :
+              h = today.getHours(today.setHours(today.getHours() + 13));
+            break;
+            default : h = today.getHours(today.setHours(today.getHours() + 0));
+          }          
+        }else{
+          h = h;
+        }
+
+        if(this.notation === undefined || this.notation === '12' || this.notation === 'standard' || this.notation === 'std') {
+          var p = h >= 12 ? ' pm' : ' am';
+          h = h % 12;
+          h = h ? h : 12;
+          h = h < 10 ? '0' + h : h;
+          period.innerHTML = p;
+        }else{
+          h = h < 10 ? '0' + h : h;
+        }
+       
+        m  = m < 10 ? '0' + m : m;
+        s  = s < 10 ? '0' + s : s;
+        
+        hour.innerHTML = h;
+        minutes.innerHTML = ':' + m;
+        seconds.innerHTML = ':' + s;
+
+        var t = setTimeout(function(){self.ready()},50);
+      }
+    });
+  </script>
+</polymer-element>
