@@ -3,9 +3,11 @@ unas-clock
 
 A clock element made with polymer
 
-Usage example basic : &lt;unas-clock&gt;&lt;/unas-clock&gt;
-Usage example with timezone attribute : &lt;unas-clock **timezone="Asia/Seoul"**&gt;&lt;/unas-clock&gt;
-Usage example standard time display : &lt;unas-clock **notation="standard"**&gt;&lt;/unas-clock&gt;
+Usage example :
+
+ - basic : &lt;unas-clock&gt;&lt;/unas-clock&gt; 
+ - using timezone attribute : &lt;unas-clock **timezone="Asia/Seoul"**&gt;&lt;/unas-clock&gt;
+ - using notation attribute : &lt;unas-clock **notation="standard"**&gt;&lt;/unas-clock&gt;
 
 ####Timezones -
  - *Pacific/Midway*
@@ -18,7 +20,7 @@ Usage example standard time display : &lt;unas-clock **notation="standard"**&gt;
  - *America/Chihuahua*
  - *America/Chihuahua*
  - *America/Mazatlan*
- - *US/Mountain - *
+ - *US/Mountain*
  - *America/Managua*
  - *US/Central*
  - *America/Mexico_City*
