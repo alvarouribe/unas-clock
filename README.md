@@ -46,7 +46,8 @@ Usage example standard time display : &lt;unas-clock **notation="standard"**&gt;
  - *Europe/Lisbon*
  - *Europe/London*
  - *Africa/Monrovia*
- - *UTCEurope/Amsterdam*
+ - *UTC*
+ - *Europe/Amsterdam*
  - *Europe/Belgrade*
  - *Europe/Berlin*
  - *Europe/Bratislava*
