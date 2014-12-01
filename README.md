@@ -2,3 +2,135 @@ unas-clock
 ==========
 
 A clock element made with polymer
+
+Usage example basic : &lt;unas-clock&gt;&lt;/unas-clock&gt;
+Usage example with timezone attribute : &lt;unas-clock **timezone="Asia/Seoul"**&gt;&lt;/unas-clock&gt;
+Usage example standard time display : &lt;unas-clock **notation="standard"**&gt;&lt;/unas-clock&gt;
+
+####Timezones -
+ - *Pacific/Midway*
+ - *Pacific/Samoa*
+ - *Pacific/Honolulu*
+ - *US/Alaska*
+ - *America/Los_Angeles*
+ - *America/Tijuana*
+ - *US/Arizona*
+ - *America/Chihuahua*
+ - *America/Chihuahua*
+ - *America/Mazatlan*
+ - *US/Mountain - *
+ - *America/Managua*
+ - *US/Central*
+ - *America/Mexico_City*
+ - *America/Monterrey*
+ - *Canada/Saskatchewan*
+ - *America/Bogota*
+ - *US/Eastern*
+ - *US/East-Indiana*
+ - *America/Lima*
+ - *America/Bogota*
+ - *America/Caracas*
+ - *America/La_Paz*
+ - *Canada/Atlantic*
+ - *America/Santiago*
+ - *Canada/Newfoundland*
+ - *America/Sao_Paulo*
+ - *America/Argentina/Buenos_Aires*
+ - *America/Godthab*
+ - *America/Noronha*
+ - *Atlantic/Azores*
+ - *Atlantic/Cape_Verde*
+ - *Africa/Casablanca*
+ - *Europe/London*
+ - *Etc/Greenwich*
+ - *Europe/Lisbon*
+ - *Europe/London*
+ - *Africa/Monrovia*
+ - *UTCEurope/Amsterdam*
+ - *Europe/Belgrade*
+ - *Europe/Berlin*
+ - *Europe/Bratislava*
+ - *Europe/Brussels*
+ - *Europe/Budapest*
+ - *Europe/Copenhagen*
+ - *Europe/Ljubljana*
+ - *Europe/Madrid*
+ - *Europe/Paris*
+ - *Europe/Prague*
+ - *Europe/Rome*
+ - *Europe/Sarajevo*
+ - *Europe/Skopje*
+ - *Europe/Stockholm*
+ - *Europe/Vienna*
+ - *Europe/Warsaw*
+ - *Africa/Lagos*
+ - *Europe/Zagreb*
+ - *Europe/Athens*
+ - *Europe/Bucharest*
+ - *Africa/Cairo*
+ - *Africa/Harare*
+ - *Europe/Helsinki*
+ - *Europe/Istanbul*
+ - *Asia/Jerusalem*
+ - *Africa/Johannesburg*
+ - *Europe/Riga*
+ - *Europe/Sofia*
+ - *Europe/Tallinn*
+ - *Europe/Vilnius*
+ - *Asia/Baghdad*
+ - *Asia/Kuwait*
+ - *Europe/Minsk*
+ - *Africa/Nairobi*
+ - *Asia/Riyadh*
+ - *Europe/Volgograd*
+ - *Asia/Tehran*
+ - *Asia/Muscat*
+ - *Asia/Baku*
+ - *Europe/Moscow*
+ - *Asia/Tbilisi*
+ - *Asia/Yerevan*
+ - *Asia/Kabul*
+ - *Asia/Karachi*
+ - *Asia/Tashkent*
+ - *Asia/Calcutta*
+ - *Asia/Kolkata*
+ - *Asia/Katmandu*
+ - *Asia/Almaty*
+ - *Asia/Dhaka*
+ - *Asia/Yekaterinburg*
+ - *Asia/Rangoon*
+ - *Asia/Bangkok*
+ - *Asia/Jakarta*
+ - *Asia/Novosibirsk*
+ - *Asia/Hong_Kong*
+ - *Asia/Chongqing*
+ - *Asia/Krasnoyarsk*
+ - *Asia/Kuala_Lumpur*
+ - *Australia/Perth*
+ - *Asia/Singapore*
+ - *Asia/Taipei*
+ - *Asia/Ulan_Bator*
+ - *Asia/Urumqi*
+ - *Asia/Irkutsk*
+ - *Asia/Seoul*
+ - *Asia/Tokyo*
+ - *Australia/Adelaide*
+ - *Australia/Darwin*
+ - *Australia/Brisbane*
+ - *Australia/Canberra*
+ - *Pacific/Guam*
+ - *Australia/Hobart*
+ - *Australia/Melbourne*
+ - *Pacific/Port_Moresby*
+ - *Australia/Sydney*
+ - *Asia/Yakutsk*
+ - *Asia/Vladivostok*
+ - *Pacific/Auckland*
+ - *Pacific/Fiji*
+ - *Pacific/Kwajalein*
+ - *Asia/Kamchatka*
+ - *Asia/Magadan*
+ - *Pacific/Tongatapu*
+
+ **Every effort has been made towards accuarcy**
+ ##WIP##
