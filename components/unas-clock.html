@@ -21,10 +21,10 @@
       
       ready: function() {
         var self = this;
-        var today=new Date(), 
-            h=today.getHours(), 
-            m=today.getMinutes(), 
-            s=today.getSeconds(), 
+        var today=new Date(),
+            h=today.getUTCHours(),
+            m=today.getUTCMinutes(),
+            s=today.getUTCSeconds(),
             hour=this.shadowRoot.getElementById('hour'),
             minutes=this.shadowRoot.getElementById('minutes'),
             seconds=this.shadowRoot.getElementById('seconds'),
