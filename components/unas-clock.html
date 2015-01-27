@@ -22,7 +22,7 @@
       ready: function() {
         var self = this;
         var today=new Date(),
-            h=today.getUTCHours(),
+            h,
             m=today.getUTCMinutes(),
             s=today.getUTCSeconds(),
             hour=this.shadowRoot.getElementById('hour'),
@@ -235,7 +235,7 @@
             default : h = today.getUTCHours(today.setHours(today.getUTCHours() + 0));
           }          
         }else{
-          h = h;
+          h = today.getUTCHours();
         }
 
         if(this.notation === undefined || this.notation === '12' || this.notation === 'standard' || this.notation === 'std') {
