@@ -13,7 +13,7 @@
     </style>
     
     <div id="clock">
-      <span id="hour">00</span><span id="minutes">00</span><span id="seconds">00</span><span id="period"></span>
+      <span id="hour">00</span>:<span id="minutes">00</span>:<span id="seconds">00</span><span id="period"></span>
     </div>
   </template>
   <script>
@@ -30,7 +30,6 @@
             seconds=this.shadowRoot.getElementById('seconds'),
             period=this.shadowRoot.getElementById('period');
 
-         console.log(h + ':' + m + ':' + s);
 
         if(this.timezone != undefined){
           switch(this.timezone){
@@ -237,6 +236,8 @@
         }else{
           h = today.getUTCHours();
         }
+        
+        console.log(h + ':' + m + ':' + s);
 
         if(this.notation === undefined || this.notation === '12' || this.notation === 'standard' || this.notation === 'std') {
           var p = h >= 12 ? ' pm' : ' am';
@@ -252,8 +253,8 @@
         s  = s < 10 ? '0' + s : s;
         
         hour.innerHTML = h;
-        minutes.innerHTML = ':' + m;
-        seconds.innerHTML = ':' + s;
+        minutes.innerHTML = m;
+        seconds.innerHTML = s;
 
         var t = setTimeout(function(){self.ready()},50);
       }
